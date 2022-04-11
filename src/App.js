@@ -1,8 +1,9 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { PageNotFound, Navbar, Footer } from "../src/Components/Components";
+
 import { useTheme } from "./Context/theme-context";
-import { Home } from "./pages/home/Home.jsx";
+import { Home, Login, Signup } from "./pages/Pages";
 import "./stylesheets/utility.css";
 
 function App() {
@@ -19,12 +20,11 @@ function App() {
 			<div>
 				<Navbar />
 			</div>
-			<div className="main-style">
+			<div className="main-style grow">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route />
-					<Route />
-					<Route />
+					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<Signup />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</div>

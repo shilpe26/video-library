@@ -11,9 +11,9 @@ const dark = {
 	textColor: "#FFC8C8",
 	secondaryColor: "#FF9999",
 };
-const ThemeContext = createContext({ mode: light, isLight: true });
+const ThemeContext = createContext({ mode: dark, isLight: false });
 const ThemeProvider = ({ children }) => {
-	const [theme, setTheme] = useState({ mode: light, isLight: true });
+	const [theme, setTheme] = useState({ mode: dark, isLight: false });
 	const themeHandler = () => {
 		theme.isLight
 			? setTheme({ mode: dark, isLight: false })
