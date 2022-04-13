@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Signup() {
 	return (
 		<div className="login-form-container signup">
-			<form className="login_form-bookhub" action="">
+			<form className="login_form-bookhub">
 				<h3 className="heading-login">Signup</h3>
 				<input
 					type="email"

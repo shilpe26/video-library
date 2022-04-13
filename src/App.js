@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { PageNotFound, Navbar, Footer } from "../src/Components/Components";
-
+import Mockman from "mockman-js";
 import { useTheme } from "./Context/theme-context";
 import { Home, Login, Signup } from "./pages/Pages";
 import "./stylesheets/utility.css";
@@ -25,6 +25,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
+					<Route path="/mock" element={<Mockman />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</div>
