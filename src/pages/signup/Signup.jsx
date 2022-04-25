@@ -33,7 +33,7 @@ function Signup() {
 							type="text"
 							id="name"
 							name="name"
-							placeholder="Jhon Doe"
+							placeholder="Shilpe"
 							required
 							minLength="3"
 							value={authState.name}
@@ -49,7 +49,7 @@ function Signup() {
 							type="email"
 							id="email"
 							name="email"
-							placeholder="Jhondoe@gmail.com"
+							placeholder="shilpe@gmail.com"
 							required
 							value={authState.email}
 							onFocus={() => authDispatch({ type: "ERROR", payload: "" })}

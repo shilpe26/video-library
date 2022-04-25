@@ -72,14 +72,12 @@ function Login() {
 					>
 						Login
 					</button>
-					<Link to="/">
-						<button
-							className="btn btn-info"
-							onClick={() => authDispatch({ type: "TEST-CREDENTIALS" })}
-						>
-							Test Login
-						</button>
-					</Link>
+					<button
+						className="btn btn-info"
+						onClick={() => authDispatch({ type: "TEST-CREDENTIALS" })}
+					>
+						Test Login
+					</button>
 				</form>
 				<p className="text-md">
 					Don't have an account ?{" "}
