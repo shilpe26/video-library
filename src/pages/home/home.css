@@ -1,11 +1,10 @@
-.bg-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: -4rem;
+.explore-btn{
+    background-color: var(--secondary-color);
+    border: 4px solid var(--secondary-color);
+    transition: all 0.6s ease-in-out;
 }
-.bg-container-dogo{
-    width: 80%;
-    /* height: 90vh; */
+
+.explore-btn:hover{
+    box-shadow: var(--dark-text-color) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
 }

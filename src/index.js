@@ -6,7 +6,9 @@ import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./Context/theme-context.jsx";
 import { AuthProvider } from "./Context/auth-context";
-
+import { Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+import { options } from "./Context/alterOptions";
 // Call make Server
 makeServer();
 ReactDOM.render(
@@ -14,7 +16,9 @@ ReactDOM.render(
 		<BrowserRouter>
 			<ThemeProvider>
 				<AuthProvider>
-					<App />
+					<AlertProvider template={AlertTemplate} {...options}>
+						<App />
+					</AlertProvider>
 				</AuthProvider>
 			</ThemeProvider>
 		</BrowserRouter>

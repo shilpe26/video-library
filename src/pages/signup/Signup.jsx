@@ -4,12 +4,14 @@ import { useTheme } from "../../Context/theme-context";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/auth-context";
 import { useAuthFunctions } from "../../Context/useAuthFunctions";
+import { Loading } from "../../Components/Components";
 
 function Signup() {
 	const confirm_password = useRef();
 	const { theme } = useTheme();
 	const [showPassword, setShowPassword] = useState(false);
 	const [errorMsg, setErrorMsg] = useState(false);
+	const [loading, setLoading] = useState(false);
 	const { authState, authDispatch } = useAuth();
 	const { signup } = useAuthFunctions();
 
@@ -18,7 +20,7 @@ function Signup() {
 		if (confirm_password.current.value !== authState.password) {
 			setErrorMsg(true);
 		} else {
-			signup();
+			signup(setLoading);
 		}
 	};
 
@@ -30,10 +32,11 @@ function Signup() {
 					<div className="input-group">
 						<label htmlFor="name">Name</label>
 						<input
+							className="font-semibold"
 							type="text"
 							id="name"
 							name="name"
-							placeholder="Shilpe"
+							placeholder="shilpe"
 							required
 							minLength="3"
 							value={authState.name}
@@ -105,19 +108,22 @@ function Signup() {
 							</p>
 						)}
 					</div>
-					<button
-						className={`btn login-btn ${theme.isLight ? "dark" : "light"}`}
-					>
-						SignUp
-					</button>
+					<div className="login-test-login-btn">
+						<button
+							className={`btn login-btn ${theme.isLight ? "dark" : "light"}`}
+						>
+							SignUp
+						</button>
+					</div>
 				</form>
-				<p className="text-md">
+				<p className="no-account text-md">
 					Already have an account ?{" "}
 					<Link to="/login" className="link">
 						Login
 					</Link>
 				</p>
 			</div>
+			{loading && <Loading />}
 		</div>
 	);
 }

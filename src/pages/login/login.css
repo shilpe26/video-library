@@ -1,18 +1,30 @@
 @import url(../../stylesheets//navbar.css);
 .link{
-    color: var(--secondary-color);
+    color: var(--light-text-color);
     text-decoration: underline;
 }
 .login-signup-container{
     text-align: center;
-    border: 2px dashed var(--secondary-color);
     padding: 2rem;
+    background-color:var(--light-bg-color) ;
+    width: 30%;
+    margin-bottom: 1rem;
+    border-radius: 4px;
 }
+.login-signup-container h3{
+    color: var(--light-text-color);
 
+}
+.login-test-login-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
 .input-group{
     text-align: left;
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--light-text-color);
 }
 
 .input-group input{
@@ -21,12 +33,15 @@
     padding: 4px;
     border: solid 2px;
     border-radius: 5px;
+    height: 4vh;
 }
 
 .password-label{
     position: relative;
 }
-
+.no-account{
+    color: var(--light-text-color);
+}
 .eye-btn{
     position: absolute;
     right: 0;
@@ -34,8 +49,4 @@
     background: transparent;
     border: none;
     cursor: pointer;
-}
-
-.error-text{
-    color: red;
 }
