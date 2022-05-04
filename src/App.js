@@ -1,9 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { PageNotFound, Navbar, Footer } from "../src/Components/Components";
+import {
+	PageNotFound,
+	Navbar,
+	Footer,
+	RequiresAuth,
+	HideAuth,
+} from "../src/Components/Components";
 import Mockman from "mockman-js";
 import { useTheme } from "./Context/theme-context";
-import { Home, Login, Signup } from "./pages/Pages";
+import { Home, Login, Signup, VideoListing, History } from "./pages/Pages";
 import "./stylesheets/utility.css";
 
 function App() {
@@ -23,10 +29,33 @@ function App() {
 			<div className="main-style grow">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/signup" element={<Signup />} />
+					<Route
+						path="/login"
+						element={
+							<HideAuth>
+								<Login />
+							</HideAuth>
+						}
+					/>
+					<Route
+						path="/signup"
+						element={
+							<HideAuth>
+								<Signup />
+							</HideAuth>
+						}
+					/>
 					<Route path="/mock" element={<Mockman />} />
 					<Route path="*" element={<PageNotFound />} />
+					<Route path="/videolisting" element={<VideoListing />} />
+					<Route
+						path="/history"
+						element={
+							<RequiresAuth>
+								<History />
+							</RequiresAuth>
+						}
+					/>
 				</Routes>
 			</div>
 			<div>

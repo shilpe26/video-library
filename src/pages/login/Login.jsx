@@ -4,16 +4,18 @@ import { useTheme } from "../../Context/theme-context";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/auth-context";
 import { useAuthFunctions } from "../../Context/useAuthFunctions";
+import { Loading } from "../../Components/Components";
 
 function Login() {
 	const { theme } = useTheme();
 	const [showPassword, setShowPassword] = useState(false);
 	const { authState, authDispatch } = useAuth();
+	const [loading, setLoading] = useState(false);
 	const { login } = useAuthFunctions();
 
 	const loginHandler = (e) => {
 		e.preventDefault();
-		login();
+		login(setLoading);
 	};
 
 	return (
@@ -67,25 +69,28 @@ function Login() {
 							}
 						/>
 					</div>
-					<button
-						className={`btn login-btn ${theme.isLight ? "dark" : "light"}`}
-					>
-						Login
-					</button>
-					<button
-						className="btn btn-info"
-						onClick={() => authDispatch({ type: "TEST-CREDENTIALS" })}
-					>
-						Test Login
-					</button>
+					<div className="login-test-login-btn">
+						<button
+							className={`btn login-btn ${theme.isLight ? "dark" : "light"}`}
+						>
+							Login
+						</button>
+						<button
+							className="btn btn-info"
+							onClick={() => authDispatch({ type: "TEST-CREDENTIALS" })}
+						>
+							Test Login
+						</button>
+					</div>
 				</form>
-				<p className="text-md">
+				<p className="no-account text-md">
 					Don't have an account ?{" "}
 					<Link to="/signup" className="link">
 						SignUp
 					</Link>
 				</p>
 			</div>
+			{loading && <Loading />}
 		</div>
 	);
 }
