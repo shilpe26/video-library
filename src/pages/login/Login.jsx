@@ -83,7 +83,7 @@ function Login() {
 						</button>
 					</div>
 				</form>
-				<p className="no-account text-md">
+				<p className="no-account text-md mt-24">
 					Don't have an account ?{" "}
 					<Link to="/signup" className="link">
 						SignUp

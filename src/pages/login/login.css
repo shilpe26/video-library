@@ -15,11 +15,15 @@
     color: var(--light-text-color);
 
 }
+
 .login-test-login-btn{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    position: absolute;
+    top: 42rem;
+    left: 52rem;
 }
 .input-group{
     text-align: left;

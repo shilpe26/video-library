@@ -108,7 +108,7 @@ function Signup() {
 							</p>
 						)}
 					</div>
-					<div className="login-test-login-btn">
+					<div className="signUp-btn flex items-center justify-center gap-8">
 						<button
 							className={`btn login-btn ${theme.isLight ? "dark" : "light"}`}
 						>
