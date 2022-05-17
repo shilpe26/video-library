@@ -11,6 +11,6 @@ export const categories = [
 	},
 	{
 		_id: uuid(),
-		categoryName: "german shepherd",
+		categoryName: "german_shepherd",
 	},
 ];

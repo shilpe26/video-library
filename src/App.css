@@ -1,5 +1,6 @@
 @import url(./index.css);
 @import url(./stylesheets/utility.css);
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
 :root{
   --light-bg-color: #FFC8C8;
   --light-text-color: #3E4149;

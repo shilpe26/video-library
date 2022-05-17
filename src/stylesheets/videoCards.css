@@ -1,0 +1,89 @@
+.card {
+  position: relative;
+  max-width: 25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.6s ease-in-out;
+  border: 0.2px solid var(--dark-text-color);
+  width: 28rem;
+}
+
+.card:hover {
+  box-shadow: var(--secondary-color) 0px 19px 43px;
+  transform: translate3d(0px, -1px, 0px);
+}
+
+.card-img {
+  width: 25rem
+}
+
+.video-card-items {
+  width: 20rem;
+  border-bottom: 0;
+  padding: 0.25rem .25rem;
+  gap: .5rem;
+}
+
+.video-card-list {
+  list-style-type: none;
+}
+
+.icon-btn {
+  padding: .25rem;
+  height: 13%;
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  border-radius: 12px;
+
+}
+
+.three-dots {
+  margin-right: -4rem;
+}
+
+.three-dots:hover {
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+
+}
+
+.list-group {
+  position: absolute;
+  z-index: 3;
+  right: 1.5rem;
+  top: 22rem;
+  width: 19rem;
+  background-color: var(--dark-text-color);
+  color: var(--light-text-color);
+}
+
+.none {
+  display: none;
+}
+
+.clear-icon:hover {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.show {
+  display: block;
+}
+
+.dropdown-list {
+  list-style: none;
+}
+
+.dropdown-list li {
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+}
+
+.dropdown-list li:hover {
+  font-weight: 600;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+}
