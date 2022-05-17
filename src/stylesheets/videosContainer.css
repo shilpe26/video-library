@@ -1,0 +1,37 @@
+.video-listing{
+    margin-left: 22rem;
+}
+.video-card-listing{
+    flex-grow: 1;
+    padding: 1rem 1rem;
+    gap: 2.25rem;
+    margin-top: -4rem;
+}
+.chip{
+    border-radius: 1.25rem;
+    background-color: var(--secondary-color);
+    padding: 1.15rem;
+    border: 1px solid var(--dark-text-color);
+}
+.chip:hover{
+    background-color: var(--dark-text-color);
+    color: var(--light-text-color);
+}
+.chip:active{
+    background-color: var(--light-text-color);
+    color: var(--secondary-color);
+    transform: translate(0,0.2rem);
+}
+.chip:focus{
+    background-color: var(--dark-bg-color);
+    color: var(--secondary-color);
+}
+.chips{
+    gap: 1.5rem;
+}
+@media (max-width: 786px ){
+    .video-listing{
+        margin-left: 12rem;
+    }
+  }
+  

@@ -9,7 +9,14 @@ import {
 } from "../src/Components/Components";
 import Mockman from "mockman-js";
 import { useTheme } from "./Context/theme-context";
-import { Home, Login, Signup, VideoListing, History } from "./pages/Pages";
+import {
+	Home,
+	Login,
+	Signup,
+	VideoListing,
+	History,
+	VideoPage,
+} from "./pages/Pages";
 import "./stylesheets/utility.css";
 
 function App() {
@@ -47,7 +54,8 @@ function App() {
 					/>
 					<Route path="/mock" element={<Mockman />} />
 					<Route path="*" element={<PageNotFound />} />
-					<Route path="/videolisting" element={<VideoListing />} />
+					<Route path="/videos" element={<VideoListing />} />
+					<Route path="/videos/:id" element={<VideoPage />} />
 					<Route
 						path="/history"
 						element={

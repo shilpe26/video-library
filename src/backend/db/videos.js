@@ -1,27 +1,27 @@
 export const videos = [
 	{
-		_id: "Wo5dMEP_BbI",
+		_id: "1oDGa2yPb2g",
 		title: "DOG TRAINING FUNDAMENTALS: LESSON 1",
 		categoryName: "fundamentals",
 		description: "Training of dogs fundamentals.",
 		creator: "Dogumentary TV",
 	},
 	{
-		_id: "K_Riqjdh2oM",
+		_id: "MW8X0IMVjzQ",
 		title: "DOG TRAINING FUNDAMENTALS: LESSON 2 RECALL",
 		creator: "Dogumentary TV",
 		categoryName: "fundamentals",
 		description: "Training of dogs fundamentals.",
 	},
 	{
-		_id: "HJ0dC82mZZE",
+		_id: "psemvgmsI3Y",
 		title: "DOG TRAINING FUNDAMENTALS: LESSON 3 LURING",
 		creator: "Dogumentary TV",
 		categoryName: "fundamentals",
 		description: "Training of dogs fundamentals.",
 	},
 	{
-		_id: "I_Riqjdh2oM",
+		_id: "Zt31jNGAKz4",
 		title: "DOG TRAINING FUNDAMENTALS: LESSON 4: GOING TO PLACE",
 		creator: "Dogumentary TV",
 		categoryName: "fundamentals",
@@ -29,28 +29,32 @@ export const videos = [
 	},
 	// aggressive
 	{
-		_id: "H_Riqjdh2oM",
-		title: "Aggressive German Shepard Problem - Solved by Cesar Millan",
+		_id: "pp1cUQkbHyg",
+		title:
+			"Aggressive German Shepard Problem - Solved by Cesar Millan".substring(
+				0,
+				25
+			) + " ...",
 		creator: "Dabl",
 		categoryName: "aggressive",
 		description: "Training of dogs aggressive.",
 	},
 	{
-		_id: "G_Riqjdh2oM",
+		_id: "PENCKF_bu60",
 		title: "Can I help this AGGRESSIVE Dog ? (Cesar911 Shorts)",
 		creator: "Cesar Millan",
 		categoryName: "aggressive",
 		description: "Training of dogs aggressive.",
 	},
 	{
-		_id: "F_Riqjdh2oM",
+		_id: "ZWyAA-7hedo",
 		title: "Food Aggression Resource Guarding",
 		creator: "Solidk9Training",
 		categoryName: "aggressive",
 		description: "Training of dogs aggressive.",
 	},
 	{
-		_id: "E_Riqjdh2oM",
+		_id: "_Fjay5HO8QE",
 		title: "Extremely Aggressive Dog Training- The Dog Daddy.",
 		creator: "The Dog Dady",
 		categoryName: "aggressive",
@@ -58,32 +62,35 @@ export const videos = [
 	},
 	// german shepherd
 	{
-		_id: "D_Riqjdh2oM",
+		_id: "UjWikQyPgPE",
 		title: "Stella (German Shepherd) Dog Training Video.",
 		creator: "Neuman K-9 Academy, Inc.",
-		categoryName: "german shepherd",
+		categoryName: "german_shepherd",
 		description: "Training of dogs german shepherd.",
 	},
 	{
-		_id: "C_Riqjdh2oM",
+		_id: "lpfsyRHVVl8",
 		title: "Obedience IPO Trained Versatility German Shepherd.",
 		creator: "Kraftwerk k9",
-		categoryName: "german shepherd",
+		categoryName: "german_shepherd",
 		description: "Training of dogs german shepherd.",
 	},
 	{
-		_id: "B_Riqjdh2oM",
+		_id: "zttUukvfl94",
 		title:
-			"How to Train a German Shepherd Puppy - A Detailed Video on GS Training Tips.",
+			"How to Train a German Shepherd Puppy - A Detailed Video on GS Training Tips.".substring(
+				0,
+				25
+			) + " ...",
 		creator: "The Animals Influence",
-		categoryName: "german shepherd",
+		categoryName: "german_shepherd",
 		description: "Training of dogs german shepherd.",
 	},
 	{
-		_id: "A_Riqjdh2oM",
+		_id: "W2pkvy5t3Bo",
 		title: "Best German Shepherd Puppy Training Tips | Dog World.",
 		creator: "Dog World",
-		categoryName: "german shepherd",
+		categoryName: "german_shepherd",
 		description: "Training of dogs german shepherd.",
 	},
 ];

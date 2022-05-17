@@ -1,0 +1,8 @@
+export const VIDEO_LIST_SUCCESS = "VIDEO_LIST_SUCCESS";
+export const VIDEO_LIST_FAIL = "VIDEO_LIST_FAIL";
+export const VIDEO_LIST_REQUEST = "VIDEO_LIST_REQUEST";
+
+export const ALL = "ALL";
+export const FUNDAMENTALS = "FUNDAMENTALS";
+export const AGGRESSIVE = "AGGRESSIVE";
+export const GERMAN_SHEPHERD = "GERMAN_SHEPHERD";

@@ -641,6 +641,9 @@
 .border-5{
     border-radius: 5px;
 }
+.border-8{
+    border-radius: 8px;
+}
 .border-round{
     border-radius: 50%;
 }

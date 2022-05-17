@@ -4,3 +4,7 @@ export { PageNotFound } from "./PageNotFound";
 export { RequiresAuth } from "./RequiresAuth";
 export { Loading } from "./Loading";
 export { HideAuth } from "./HideAuth";
+export { Drawer } from "./Drawer";
+export { SingleVideoContainer } from "./SingleVideoContainer";
+export { VideoCards } from "./VideoCards";
+export { VideosContainer } from "./VideosContainer";

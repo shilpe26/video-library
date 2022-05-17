@@ -1,0 +1,4 @@
+export const LIKES_REQUEST = "LIKES_REQUEST";
+export const LIKES_SUCCESS = "LIKES_SUCCESS";
+export const ADD_TO_LIKES = "ADD_TO_LIKES";
+export const DELETE_FROM_LIKES = "DELETE_FROM_LIKES";
