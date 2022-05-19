@@ -6,9 +6,11 @@ import {
 	Footer,
 	RequiresAuth,
 	HideAuth,
+	Playlist,
 } from "../src/Components/Components";
 import Mockman from "mockman-js";
 import { useTheme } from "./Context/theme-context";
+import { usePlaylist } from "./Context/playlist-context";
 import {
 	Home,
 	Login,
@@ -16,11 +18,14 @@ import {
 	VideoListing,
 	History,
 	VideoPage,
+	PlayListPage,
+	PlayListModal,
 } from "./pages/Pages";
 import "./stylesheets/utility.css";
 
 function App() {
 	const { theme } = useTheme();
+	const { modal } = usePlaylist();
 
 	return (
 		<div
@@ -56,6 +61,8 @@ function App() {
 					<Route path="*" element={<PageNotFound />} />
 					<Route path="/videos" element={<VideoListing />} />
 					<Route path="/videos/:id" element={<VideoPage />} />
+					<Route path="/playlist/:id" element={<PlayListPage />} />
+					<Route path="/playlist" element={<Playlist />} />
 					<Route
 						path="/history"
 						element={
@@ -66,6 +73,7 @@ function App() {
 					/>
 				</Routes>
 			</div>
+			<PlayListModal modal={modal} />
 			<div>
 				<Footer />
 			</div>

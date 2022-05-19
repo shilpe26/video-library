@@ -8,3 +8,6 @@ export { Drawer } from "./Drawer";
 export { SingleVideoContainer } from "./SingleVideoContainer";
 export { VideoCards } from "./VideoCards";
 export { VideosContainer } from "./VideosContainer";
+export { SinglePlaylistContainer } from "./SinglePlaylistContainer";
+export { Playlist } from "./Playlist";
+export { PlaylistContainer } from "./PlaylistContainer";
