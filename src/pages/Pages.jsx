@@ -7,3 +7,5 @@ export { VideoPage } from "./videoPage/VideoPage";
 export { EmptyMessage } from "./emptyMessage/EmptyMessage";
 export { PlayListPage } from "./playlistPage/PlayListPage";
 export { PlayListModal } from "./playlistModal/PlayListModal";
+export { WatchLater } from "./watchlater/WatchLater";
+export { LikedVideos } from "./likedVideos/LikedVideos";

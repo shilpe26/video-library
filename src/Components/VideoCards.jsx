@@ -62,7 +62,7 @@ function VideoCards({ _id, title, creator }) {
 				<img
 					onClick={() => {
 						navigate(`/videos/${_id}`);
-						authState.encodedToken.length === 0 &&
+						authState.encodedToken.length !== 0 &&
 							!inHistory &&
 							addToHistory(video);
 					}}

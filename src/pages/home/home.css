@@ -8,3 +8,9 @@
     box-shadow: var(--dark-text-color) 0px 19px 43px;
     transform: translate3d(0px, -1px, 0px);
 }
+
+@media (max-width:786px) {
+    .explore-btn{
+        margin-top: 4rem;
+    }
+}

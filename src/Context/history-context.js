@@ -26,7 +26,7 @@ const HistoryProvider = ({ children }) => {
 
 	useEffect(() => {
 		(async () => {
-			if (authState.encodedToken.length === 0) {
+			if (authState.encodedToken.length !== 0) {
 				try {
 					const response = await getHistoryService(authState.encodedToken);
 					historyDispatch({ type: HISTORY_REQUEST, payload: { status: true } });

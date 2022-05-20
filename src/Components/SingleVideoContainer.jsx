@@ -100,31 +100,46 @@ function SingleVideoContainer() {
 							</div>
 							<div className="video-action-btn chips">
 								{!inLikes && (
-									<button onClick={() => addLikeHandler()} className="chip">
+									<button
+										onClick={() => addLikeHandler()}
+										className="chip cursor"
+									>
 										<span className="material-icons">thumb_up</span>
 										Like
 									</button>
 								)}
 								{inLikes && (
-									<button onClick={() => dislikeHandler()} className="chip">
+									<button
+										onClick={() => dislikeHandler()}
+										className="chip cursor"
+									>
 										<span className="material-icons">thumb_down</span>
 										Dislike
 									</button>
 								)}
 								{!inWatchlater && (
-									<button onClick={() => addClickHandler()} className="chip">
+									<button
+										onClick={() => addClickHandler()}
+										className="chip cursor"
+									>
 										<span className="material-icons">watch_later</span>
 										Watch Later
 									</button>
 								)}
 								{inWatchlater && (
-									<button onClick={() => deleteClickHandler()} className="chip">
+									<button
+										onClick={() => deleteClickHandler()}
+										className="chip cursor"
+									>
 										<span className="material-icons">watch_later</span>
 										Delete From Watch Later
 									</button>
 								)}
 
-								<button onClick={() => addToPlaylistHandler()} className="chip">
+								<button
+									onClick={() => addToPlaylistHandler()}
+									className="chip cursor"
+								>
 									<span className="material-icons">playlist_add</span>
 									Add
 								</button>

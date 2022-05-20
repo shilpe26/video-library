@@ -1,21 +1,21 @@
 import axios from "axios";
 
-export const getLikesService = async (token) => {
+export const getLikesService = async (encodedToken) => {
 	return await axios.get("/api/user/likes", {
-		headers: { authorization: token },
+		headers: { authorization: encodedToken },
 	});
 };
 
-export const addToLikesService = async (video, token) => {
+export const addToLikesService = async (video, encodedToken) => {
 	return await axios.post(
 		"/api/user/likes",
 		{ video },
-		{ headers: { authorization: token } }
+		{ headers: { authorization: encodedToken } }
 	);
 };
 
-export const deleteFromLikesService = async (videoId, token) => {
+export const deleteFromLikesService = async (videoId, encodedToken) => {
 	return await axios.delete(`/api/user/likes/${videoId}`, {
-		headers: { authorization: token },
+		headers: { authorization: encodedToken },
 	});
 };

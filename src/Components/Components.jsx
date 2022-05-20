@@ -11,3 +11,6 @@ export { VideosContainer } from "./VideosContainer";
 export { SinglePlaylistContainer } from "./SinglePlaylistContainer";
 export { Playlist } from "./Playlist";
 export { PlaylistContainer } from "./PlaylistContainer";
+export { HistoryContainer } from "./HistoryContainer";
+export { WatchLaterContainer } from "./WatchLaterContainer";
+export { LikedVideoContainer } from "./LikedVideoContainer";

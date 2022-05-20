@@ -1,27 +1,28 @@
 import axios from "axios";
 
-export const getHistoryService = async (token) => {
+export const getHistoryService = async (encodedToken) => {
 	return await axios.get("/api/user/history", {
-		headers: { authorization: token },
+		headers: { authorization: encodedToken },
 	});
 };
 
-export const addToHistoryService = async (video, token) => {
+export const addToHistoryService = async (video, encodedToken) => {
+	console.log("added video");
 	return await axios.post(
 		"/api/user/history",
 		{ video },
-		{ headers: { authorization: token } }
+		{ headers: { authorization: encodedToken } }
 	);
 };
 
-export const deleteFromHistoryService = async (videoId, token) => {
+export const deleteFromHistoryService = async (videoId, encodedToken) => {
 	return await axios.delete(`/api/user/history/${videoId}`, {
-		headers: { authorization: token },
+		headers: { authorization: encodedToken },
 	});
 };
 
-export const clearAllHistoryService = async (token) => {
+export const clearAllHistoryService = async (encodedToken) => {
 	return await axios.delete(`/api/user/history/all`, {
-		headers: { authorization: token },
+		headers: { authorization: encodedToken },
 	});
 };

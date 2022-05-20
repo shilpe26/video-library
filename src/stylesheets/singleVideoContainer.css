@@ -66,25 +66,40 @@
         }
    }
    @media (max-width: 786px ){
+    .video-container{
+        flex-direction: column;
+        margin-left: 3rem;
+    }
        .related-videos{
-           margin-top: 16rem;
+           margin-top: 30rem;
+           margin-left: 10rem;
        }
+       .item-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+    }
        .video-action-btn{
            margin-left: 0;
        }
        .video{
-           width: 40%;
+           width: 65%;
            height: 30vh;
            margin-left: 10rem;
         }
+        .video-action-btn .chip{
+            font-size: 0rem;
+        }
    }
-   @media only screen and (max-width: 515px ){
-       .related-videos{
-           display: flex;
-           flex-direction: column;
-           margin-top: 18rem;
-           margin-right: 25rem;
-       }
-       .video{
-           height: 30vh}
-   }
+    @media only screen and (max-width: 515px ){
+        .related-videos{
+            display: flex;
+            flex-direction: column;
+            margin-top: 18rem;
+            margin-right: 25rem;
+        }
+        .video{
+            height: 30vh}
+    }
