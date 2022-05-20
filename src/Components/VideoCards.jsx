@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../stylesheets/videoCards.css";
 import { useAuth } from "../Context/auth-context";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useLikes } from "../Context/like-context";
@@ -7,6 +6,8 @@ import { useHistory } from "../Context/history-context";
 import { useWatchlater } from "../Context/watchLater-context";
 import { usePlaylist } from "../Context/playlist-context";
 import Dogo from "../assets/bg-doggo.png";
+import "../stylesheets/videoCards.css";
+
 function VideoCards({ _id, title, creator }) {
 	const location = useLocation();
 	const { authState } = useAuth();

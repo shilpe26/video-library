@@ -16,6 +16,7 @@ import {
 } from "../global_constants/history-constants";
 
 const HistoryContext = createContext();
+
 const HistoryProvider = ({ children }) => {
 	const { authState } = useAuth();
 

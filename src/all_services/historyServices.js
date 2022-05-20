@@ -7,7 +7,6 @@ export const getHistoryService = async (encodedToken) => {
 };
 
 export const addToHistoryService = async (video, encodedToken) => {
-	console.log("added video");
 	return await axios.post(
 		"/api/user/history",
 		{ video },

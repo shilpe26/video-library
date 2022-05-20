@@ -3,6 +3,7 @@ import { VideoCards } from "./Components";
 import { useHistory } from "../Context/history-context";
 import { EmptyMessage } from "../pages/Pages";
 import "../stylesheets/historyContainer.css";
+
 function HistoryContainer() {
 	const { historyState, clearAllHistory } = useHistory();
 	const historyData = [...historyState.history];
@@ -17,9 +18,8 @@ function HistoryContainer() {
 					>
 						Clear All
 					</button>
-
 					<div className="item-list mt-4">
-						{historyData.reverse().map(({ _id, title, creator }) => {
+						{historyData.map(({ _id, title, creator }) => {
 							return (
 								<VideoCards
 									key={_id}
