@@ -17,9 +17,11 @@ import {
 	Signup,
 	VideoListing,
 	History,
+	WatchLater,
 	VideoPage,
 	PlayListPage,
 	PlayListModal,
+	LikedVideos,
 } from "./pages/Pages";
 import "./stylesheets/utility.css";
 
@@ -63,6 +65,9 @@ function App() {
 					<Route path="/videos/:id" element={<VideoPage />} />
 					<Route path="/playlist/:id" element={<PlayListPage />} />
 					<Route path="/playlist" element={<Playlist />} />
+					<Route path="/watchlater" element={<WatchLater />} />
+					<Route path="/liked" element={<LikedVideos />} />
+
 					<Route
 						path="/history"
 						element={

@@ -24,7 +24,7 @@ const LikesProvider = ({ children }) => {
 
 	useEffect(() => {
 		(async () => {
-			if (authState.encodedToken.length === 0) {
+			if (authState.encodedToken.length !== 0) {
 				try {
 					const response = await getLikesService(authState.encodedToken);
 					likesDispatch({ type: LIKES_REQUEST, payload: { status: true } });

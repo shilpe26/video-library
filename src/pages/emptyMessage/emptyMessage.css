@@ -2,5 +2,12 @@
     margin-top: -14rem;
 }
 .empty-text{
-    margin-top: -8rem;
+    margin-top: -1rem;
+}
+@media (max-width:786px){
+    .ply-empty{
+        margin-top: -4rem;
+        width: 70%;
+        margin-left: 4rem;
+    }
 }

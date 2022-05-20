@@ -1,0 +1,11 @@
+.clear-btn-vl{
+    background-color: var(--secondary-color);
+}
+.clear-btn-vl:hover{
+    background-color: var(--light-bg-color);
+}
+@media (max-width:786px){
+    .clear-btn-vl{
+        margin-left: 14rem;
+    }
+}

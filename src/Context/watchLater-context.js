@@ -17,7 +17,7 @@ const WatchLaterProvider = ({ children }) => {
 	const [inWatchlater, setInWatchlater] = useState(false);
 	useEffect(() => {
 		(async () => {
-			if (authState.encodedToken.length === 0) {
+			if (authState.encodedToken.length !== 0) {
 				try {
 					const response = await getWatchLaterService(authState.encodedToken);
 					if (response.status === 200) {
