@@ -23,8 +23,7 @@ function HistoryContainer() {
 					</button>
 					<div className="item-list mt-4">
 						{history.map(({ _id, title, creator }) => (
-							<p>{title}</p>
-							// <VideoCards key={_id} _id={_id} title={title} creator={creator} />
+							<VideoCards key={_id} _id={_id} title={title} creator={creator} />
 						))}
 					</div>
 				</>

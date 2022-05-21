@@ -63,10 +63,41 @@ function App() {
 					<Route path="*" element={<PageNotFound />} />
 					<Route path="/videos" element={<VideoListing />} />
 					<Route path="/videos/:id" element={<VideoPage />} />
-					<Route path="/playlist/:id" element={<PlayListPage />} />
-					<Route path="/playlist" element={<Playlist />} />
-					<Route path="/watchlater" element={<WatchLater />} />
-					<Route path="/liked" element={<LikedVideos />} />
+
+					<Route
+						path="/playlist/:id"
+						element={
+							<RequiresAuth>
+								<PlayListPage />
+							</RequiresAuth>
+						}
+					/>
+
+					<Route
+						path="/playlist"
+						element={
+							<RequiresAuth>
+								<Playlist />
+							</RequiresAuth>
+						}
+					/>
+
+					<Route
+						path="/watchlater"
+						element={
+							<RequiresAuth>
+								<WatchLater />
+							</RequiresAuth>
+						}
+					/>
+					<Route
+						path="/liked"
+						element={
+							<RequiresAuth>
+								<LikedVideos />
+							</RequiresAuth>
+						}
+					/>
 
 					<Route
 						path="/history"

@@ -11,6 +11,7 @@ import { getVideoByIdService } from "../all_services/videoService";
 import "../stylesheets/singleVideoContainer.css";
 
 function SingleVideoContainer() {
+	const token = localStorage.getItem("userToken");
 	const { state } = useVideos();
 	const { authState } = useAuth();
 	const { id } = useParams();
@@ -41,33 +42,33 @@ function SingleVideoContainer() {
 		})();
 	}, [id]);
 	const addLikeHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (!token) {
 			navigate("/login");
 		}
 		addToLikes(video);
 	};
 
 	const dislikeHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (!token) {
 			navigate("/login");
 		}
 		deleteFromLikes(video);
 	};
 
 	const deleteClickHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (!token) {
 			navigate("/login");
 		}
 		deleteFromWatchlater(id);
 	};
 	const addClickHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (!token) {
 			navigate("/login");
 		}
 		addToWatcherLater(video);
 	};
 	const addToPlaylistHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (!token) {
 			navigate("/login");
 		} else {
 			setModal(video);
