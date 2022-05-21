@@ -1,3 +1,20 @@
-## Video Library Backend
+# DINGO
 
-This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.
+### A Video Library of resources to train your dog.
+
+## DINGO Features
+    
+    ✅Authentication
+    ✅Category based filter
+    ✅Playlist management
+    ✅Add to watch later
+    ✅Like videos
+    ✅Watch history
+ 
+    
+## Built With
+
+   #### React JS library
+   #### Mockbee
+
+
