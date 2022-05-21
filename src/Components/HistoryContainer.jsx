@@ -5,8 +5,7 @@ import { EmptyMessage } from "../pages/Pages";
 import "../stylesheets/historyContainer.css";
 
 function HistoryContainer() {
-	const { historyState, clearAllHistory } = useHistory();
-	// const historyData = [...historyState.history];
+	const { clearAllHistory } = useHistory();
 	const {
 		historyState: { history },
 		historyDispatch,

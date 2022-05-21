@@ -9,20 +9,26 @@ function Footer() {
 						href="https://twitter.com/ShilpeSaxena"
 						target="_blank"
 						rel="noreferrer"
-						className="fab fa-twitter footer_for-bookhub"
-					></a>
+						className="footer_for-bookhub"
+					>
+						<i className="fab fa-twitter"></i>
+					</a>
 					<a
 						href="https://www.linkedin.com/in/shilpe-saxena-heartly-winner/"
 						target="_blank"
 						rel="noreferrer"
-						className="fab fa-linkedin footer_for-bookhub"
-					></a>
+						className="footer_for-bookhub"
+					>
+						<i className="fab fa-linkedin"></i>
+					</a>
 					<a
 						href="https://github.com/shilpe26"
 						target="_blank"
 						rel="noreferrer"
-						className="fab fa-github footer_for-bookhub"
-					></a>
+						className="footer_for-bookhub"
+					>
+						<i className="fab fa-github"></i>
+					</a>
 				</div>
 				<div className="credit text-md font-bold mt-8 py-8 px-4 text">
 					Made with 🧡 by

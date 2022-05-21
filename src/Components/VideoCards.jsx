@@ -31,7 +31,7 @@ function VideoCards({ _id, title, creator }) {
 	}, [watchlater.watchlaterItems]);
 
 	const addClickHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (authState.encodedToken.length === 0) {
 			navigate("/login");
 		}
 		addToWatcherLater(video);
@@ -39,7 +39,7 @@ function VideoCards({ _id, title, creator }) {
 	};
 
 	const deleteClickHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (authState.encodedToken.length === 0) {
 			navigate("/login");
 		}
 		deleteFromWatchlater(_id);
@@ -50,7 +50,7 @@ function VideoCards({ _id, title, creator }) {
 		setDropdown("none");
 	};
 	const addToPlaylistHandler = () => {
-		if (!authState.encodedToken.length === 0) {
+		if (authState.encodedToken.length === 0) {
 			navigate("/login");
 		} else {
 			setModal(video);
