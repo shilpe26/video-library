@@ -27,22 +27,20 @@ const HistoryProvider = ({ children }) => {
 
 	useEffect(() => {
 		(async () => {
-			if (authState.encodedToken.length !== 0) {
-				try {
-					const response = await getHistoryService(authState.encodedToken);
-					historyDispatch({ type: HISTORY_REQUEST, payload: { status: true } });
-					if (response.status === 200) {
-						historyDispatch({
-							type: HISTORY_SUCCESS,
-							payload: response.data.history,
-						});
-					}
-				} catch (error) {
-					console.log(error);
+			try {
+				const response = await getHistoryService(authState.encodedToken);
+				historyDispatch({ type: HISTORY_REQUEST, payload: { status: true } });
+				if (response.status === 200) {
+					historyDispatch({
+						type: HISTORY_SUCCESS,
+						payload: response.data.history,
+					});
 				}
+			} catch (error) {
+				console.log(error);
 			}
 		})();
-	});
+	}, [historyState]);
 
 	const addToHistory = async (video) => {
 		try {

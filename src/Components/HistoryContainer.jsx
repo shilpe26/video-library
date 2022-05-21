@@ -6,29 +6,26 @@ import "../stylesheets/historyContainer.css";
 
 function HistoryContainer() {
 	const { historyState, clearAllHistory } = useHistory();
-	const historyData = [...historyState.history];
-
+	// const historyData = [...historyState.history];
+	const {
+		historyState: { history },
+		historyDispatch,
+	} = useHistory();
 	return (
 		<div>
-			{historyState.history.length ? (
+			{history.length ? (
 				<>
 					<button
-						onClick={() => clearAllHistory()}
+						onClick={() => clearAllHistory(historyDispatch)}
 						className="btn btn-primary clear-btn-vl ml-22"
 					>
 						Clear All
 					</button>
 					<div className="item-list mt-4">
-						{historyData.map(({ _id, title, creator }) => {
-							return (
-								<VideoCards
-									key={_id}
-									_id={_id}
-									title={title}
-									creator={creator}
-								/>
-							);
-						})}
+						{history.map(({ _id, title, creator }) => (
+							<p>{title}</p>
+							// <VideoCards key={_id} _id={_id} title={title} creator={creator} />
+						))}
 					</div>
 				</>
 			) : (
