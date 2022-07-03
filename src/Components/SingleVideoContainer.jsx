@@ -97,7 +97,7 @@ function SingleVideoContainer() {
 							/>
 							<div className="list-content">
 								<p className="text-md font-semibold">{title}</p>
-								<p className="text-smd font-semibold">{creator}</p>
+								<p className="text-md font-semibold">{creator}</p>
 							</div>
 							<div className="video-action-btn chips">
 								{!inLikes && (

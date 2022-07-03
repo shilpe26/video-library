@@ -1,23 +1,26 @@
 @import url(../../stylesheets//navbar.css);
-.link{
+
+.link {
     color: var(--light-text-color);
     text-decoration: underline;
 }
-.login-signup-container{
+
+.login-signup-container {
     text-align: center;
     padding: 2rem;
-    background-color:var(--light-bg-color) ;
+    background-color: var(--light-bg-color);
     width: 30%;
     margin-bottom: 1rem;
     border-radius: 4px;
     border: 4px solid var(--light-text-color);
 }
-.login-signup-container h3{
+
+.login-signup-container h3 {
     color: var(--light-text-color);
 
 }
 
-.login-test-login-btn{
+.login-test-login-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,28 +29,32 @@
     top: 42rem;
     left: 52rem;
 }
-.input-group{
+
+.input-group {
     text-align: left;
     margin-bottom: 1rem;
     color: var(--light-text-color);
 }
 
-.input-group input{
+.input-group input {
     width: 100%;
     margin: 5px auto;
     padding: 4px;
     border: solid 2px;
     border-radius: 5px;
     height: 4vh;
+    font-size: 1.2rem;
 }
 
-.password-label{
+.password-label {
     position: relative;
 }
-.no-account{
+
+.no-account {
     color: var(--light-text-color);
 }
-.eye-btn{
+
+.eye-btn {
     position: absolute;
     right: 0;
     top: 0;
@@ -55,12 +62,15 @@
     border: none;
     cursor: pointer;
 }
-@media (max-width:786px){
-    .login-signup-container{
+
+@media (max-width:786px) {
+    .login-signup-container {
         width: 50%;
     }
-    .login-test-login-btn{
+
+    .login-test-login-btn {
         top: 44rem;
-left: 16rem;
+        left: 13.5rem;
+        position: absolute;
     }
 }

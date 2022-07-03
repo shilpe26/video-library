@@ -17,7 +17,7 @@ function PlayListModal({ modal }) {
 		<div className={`modal-container ${modal ? "show" : "none"}`}>
 			<div className="card modal mt-48 border-8">
 				<div>
-					<h2>Your Playlists</h2>
+					<h2 className="text-smd">Your Playlists</h2>
 				</div>
 				<div className="text-sm card-desc">
 					<ul className="play-list">
@@ -32,8 +32,8 @@ function PlayListModal({ modal }) {
 								>
 									{" "}
 									<div className="ply-new-items flex items-end justify-end border-4">
-										<span className="mt-4">{item.title}</span>
-										<span className="material-icons mt-2 cursor">add</span>
+										<span className="playlist-title p-4">{item.title}</span>
+										<span className="material-icons p-2 cursor">add</span>
 									</div>
 								</li>
 							);

@@ -7,36 +7,50 @@
     align-items: center;
     border-radius: 0;
     top: 0;
-	left: 0;
-	right: 0;
+    left: 0;
+    right: 0;
     transform: none;
     background-color: rgba(0, 0, 0, 0.2);
 }
-.modal{
+
+.modal {
     background: var(--dark-bg-color);
     margin-inline: auto;
 }
-input::placeholder{
+
+input::placeholder {
     font-size: 1.5rem;
 }
-input[type="text"]{
-    width: 94%;
-    padding: 1rem .7rem;
-    font-size: 1.5rem;
+
+input {
+    font-size: 1rem;
 }
-.ply-modal-input{
-    width: 30rem;
+
+input.ply-modal-input {
+    width: 93%;
+    font-size: 1.2rem;
+    padding: 1rem;
 }
-.ply-new-items{
+
+.ply-new-items {
     gap: 18rem;
     background-color: var(--light-bg-color);
     color: var(--dark-bg-color);
+    width: 100%;
 }
+
+.playlist-title {
+    left: 10px;
+    right: 0;
+    position: absolute;
+}
+
 .play-list {
     padding-left: 0;
     list-style: none;
     font-size: 1.5rem;
 }
+
 .play-list li {
     padding: 0.5rem;
     border-radius: 5px;
@@ -50,4 +64,3 @@ input[type="text"]{
     background: var(--dark-bg-color);
     border-radius: 4px;
 }
-

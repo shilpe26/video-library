@@ -31,7 +31,7 @@ export const videos = [
 	{
 		_id: "pp1cUQkbHyg",
 		title:
-			"Aggressive German Shepard Problem - Solved by Cesar Millan".substring(
+			"Aggressive German Shepherd Problem - Solved by Cesar Millan".substring(
 				0,
 				25
 			) + " ...",
