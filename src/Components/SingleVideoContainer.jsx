@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Dogo from "../assets/bg-doggo.png";
-import { useAuth } from "../Context/auth-context";
 import { useVideos } from "../Context/video-context";
 import { VideoCards } from "./Components";
 import { useLikes } from "../Context/like-context";
@@ -9,11 +8,12 @@ import { usePlaylist } from "../Context/playlist-context";
 import { useWatchlater } from "../Context/watchLater-context";
 import { getVideoByIdService } from "../all_services/videoService";
 import "../stylesheets/singleVideoContainer.css";
+import { useAlert } from "react-alert";
 
 function SingleVideoContainer() {
 	const token = localStorage.getItem("userToken");
 	const { state } = useVideos();
-	const { authState } = useAuth();
+	const alert = useAlert();
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const [video, setVideo] = useState({});
@@ -44,6 +44,7 @@ function SingleVideoContainer() {
 	const addLikeHandler = () => {
 		if (!token) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		}
 		addToLikes(video);
 	};
@@ -51,6 +52,7 @@ function SingleVideoContainer() {
 	const dislikeHandler = () => {
 		if (!token) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		}
 		deleteFromLikes(video);
 	};
@@ -58,18 +60,21 @@ function SingleVideoContainer() {
 	const deleteClickHandler = () => {
 		if (!token) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		}
 		deleteFromWatchlater(id);
 	};
 	const addClickHandler = () => {
 		if (!token) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		}
 		addToWatcherLater(video);
 	};
 	const addToPlaylistHandler = () => {
 		if (!token) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		} else {
 			setModal(video);
 		}

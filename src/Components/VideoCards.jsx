@@ -7,12 +7,14 @@ import { useWatchlater } from "../Context/watchLater-context";
 import { usePlaylist } from "../Context/playlist-context";
 import Dogo from "../assets/bg-doggo.png";
 import "../stylesheets/videoCards.css";
+import { useAlert } from "react-alert";
 
 function VideoCards({ _id, title, creator }) {
 	const location = useLocation();
 	const { authState } = useAuth();
 	const { id } = useParams();
 	const navigate = useNavigate();
+	const alert = useAlert();
 	const video = { _id, title, creator };
 	const { watchlater, addToWatcherLater, deleteFromWatchlater } =
 		useWatchlater();
@@ -33,6 +35,7 @@ function VideoCards({ _id, title, creator }) {
 	const addClickHandler = () => {
 		if (authState.encodedToken.length === 0) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		}
 		addToWatcherLater(video);
 		setDropdown("none");
@@ -41,6 +44,7 @@ function VideoCards({ _id, title, creator }) {
 	const deleteClickHandler = () => {
 		if (authState.encodedToken.length === 0) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		}
 		deleteFromWatchlater(_id);
 		setDropdown("none");
@@ -52,6 +56,7 @@ function VideoCards({ _id, title, creator }) {
 	const addToPlaylistHandler = () => {
 		if (authState.encodedToken.length === 0) {
 			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
 		} else {
 			setModal(video);
 			setDropdown("none");
