@@ -6,8 +6,9 @@ import "../stylesheets/playlistContainer.css";
 export const PlaylistContainer = () => {
 	const { playlistState, deletePlaylist } = usePlaylist();
 	const navigate = useNavigate();
+
 	return (
-		<div className="video-list">
+		<div className="video-list grow">
 			{playlistState.playlists.length ? (
 				<>
 					<div>

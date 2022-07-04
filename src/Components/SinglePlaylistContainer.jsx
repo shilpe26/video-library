@@ -10,27 +10,20 @@ function SinglePlaylistContainer() {
 	const currentPlaylist = playlistState.playlists.find(
 		(item) => item._id === id
 	);
+
 	return (
 		<div>
-			return (
-			<div>
-				{currentPlaylist && currentPlaylist.videos.length !== 0 ? (
-					<div className="item-list">
-						{currentPlaylist.videos.map(({ _id, title, creator }) => {
-							return (
-								<VideoCards
-									key={_id}
-									_id={_id}
-									title={title}
-									creator={creator}
-								/>
-							);
-						})}
-					</div>
-				) : (
-					<EmptyMessage />
-				)}
-			</div>
+			{currentPlaylist && currentPlaylist.videos.length !== 0 ? (
+				<div className="item-list">
+					{currentPlaylist.videos.map(({ _id, title, creator }) => {
+						return (
+							<VideoCards key={_id} _id={_id} title={title} creator={creator} />
+						);
+					})}
+				</div>
+			) : (
+				<EmptyMessage />
+			)}
 		</div>
 	);
 }

@@ -1,13 +1,15 @@
-.ply-empty{
-    margin-top: -14rem;
+.ply-empty {
+    margin: auto;
+    width: 24rem;
 }
-.empty-text{
+
+.empty-text {
     margin-top: -1rem;
 }
-@media (max-width:786px){
-    .ply-empty{
-        margin-top: -4rem;
+
+@media (max-width:786px) {
+    .ply-empty {
         width: 70%;
-        margin-left: 4rem;
+        margin: -6rem auto;
     }
 }
