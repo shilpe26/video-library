@@ -1,11 +1,12 @@
-.clear-btn-vl{
+.clear-btn-vl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
     background-color: var(--secondary-color);
 }
-.clear-btn-vl:hover{
+
+.clear-btn-vl:hover {
     background-color: var(--light-bg-color);
-}
-@media (max-width:786px){
-    .clear-btn-vl{
-        margin-left: 14rem;
-    }
 }

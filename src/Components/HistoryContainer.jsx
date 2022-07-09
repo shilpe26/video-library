@@ -16,7 +16,7 @@ function HistoryContainer() {
 				<>
 					<button
 						onClick={() => clearAllHistory(historyDispatch)}
-						className="btn btn-primary clear-btn-vl ml-22"
+						className="btn btn-primary clear-btn-vl"
 					>
 						Clear All
 					</button>

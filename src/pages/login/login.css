@@ -58,6 +58,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    left: 29rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -67,12 +68,15 @@
     .login-signup-container {
         width: 50%;
     }
+
     .input-group input {
         height: 3vh;
     }
-    .eye-btn{
+
+    .eye-btn {
         left: 13rem;
     }
+
     .login-test-login-btn {
         top: 40.4rem;
         left: 8.5rem;
