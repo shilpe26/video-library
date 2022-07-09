@@ -17,7 +17,7 @@ function VideosContainer() {
 
 	return (
 		<div className="video-listing mt-8">
-			<div className="chips flex flex-wrap p-4">
+			<div className="chips">
 				<button
 					onClick={() => dispatch({ type: ALL })}
 					className="chip flex items-center cursor"

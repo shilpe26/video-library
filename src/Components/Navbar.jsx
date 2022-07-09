@@ -13,10 +13,10 @@ function Navbar() {
 	const { logout } = useAuthFunctions();
 	return (
 		<div>
-			<nav className="container-note px-12 flex justify-between">
+			<nav className="container-note px-12 flex justify-center">
 				<h1 className="heading-note">
 					<Link to="/">
-						<img src={Logo} alt="paw-logo" />
+						<img className="heading-img" src={Logo} alt="paw-logo" />
 					</Link>
 				</h1>
 				<div className="nav-btn-links">

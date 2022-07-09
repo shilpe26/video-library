@@ -67,10 +67,16 @@
     .login-signup-container {
         width: 50%;
     }
-
+    .input-group input {
+        height: 3vh;
+    }
+    .eye-btn{
+        left: 13rem;
+    }
     .login-test-login-btn {
-        top: 44rem;
-        left: 13.5rem;
+        top: 40.4rem;
+        left: 8.5rem;
+        gap: 0;
         position: absolute;
     }
 }

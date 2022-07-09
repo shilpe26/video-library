@@ -10,7 +10,7 @@ function Home() {
 			</div>
 			<div className="flex items-center justify-center">
 				<Link to="/videos">
-					<button className="explore-btn text-md mt-4 cursor border-5 p-4 w-40">
+					<button className="explore-btn text-md mt-4 cursor border-5 p-2 w-40">
 						Explore
 					</button>
 				</Link>

@@ -1,10 +1,16 @@
 .side-bar {
     position: fixed;
     min-width: 12rem;
+    min-height: 100vh;
+    z-index: 1;
 }
+
 .side-list {
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
+
 .side-list a {
     padding: 0.5rem;
     border-radius: 5px;
@@ -13,18 +19,27 @@
     gap: 1.25rem;
 }
 
-.side-list a:hover ,.active {
+.side-list a:hover,
+.active {
     font-weight: 600;
     background: var(--secondary-color);
     border-radius: 4px;
 }
 
-@media (max-width:768px){
-  .side-items {
-      display: none;
-  }
+@media (max-width:768px) {
+    .side-items {
+        display: none;
+    }
 
-  .side-bar{
-    min-width: 2rem;
-  }
+    .side-list {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .side-bar {
+        width: 100%;
+        min-height: 10vh;
+        bottom: 0;
+        background-color: var(--secondary-color);
+    }
 }

@@ -14,7 +14,7 @@ export const PlaylistContainer = () => {
 					<div>
 						{playlistState.playlists.map(({ _id, title, videos }) => {
 							return (
-								<div key={_id} className="playlist-card ml-96 card">
+								<div key={_id} className="playlist-card card">
 									<div>
 										<div
 											onClick={() => navigate(`/playlist/${_id}`)}
