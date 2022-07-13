@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { usePlaylist } from "../../Context/playlist-context";
+import { usePlaylist } from "../../Context/playlistContext/playlist-context";
+import { usePlaylistServerCall } from "../../Context/playlistContext/usePlaylistServerCall";
 import "./playListModal.css";
 
 function PlayListModal({ modal }) {
-	const { playlistState, createPlaylist, setModal, addToPlaylist } =
-		usePlaylist();
+	const { createPlaylist, addToPlaylist } = usePlaylistServerCall();
+	const { playlistState, setModal } = usePlaylist();
 	const [title, setTitle] = useState("");
 
 	const createClickHandler = () => {

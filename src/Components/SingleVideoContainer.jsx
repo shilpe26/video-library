@@ -1,46 +1,65 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Dogo from "../assets/bg-doggo.png";
-import { useVideos } from "../Context/video-context";
+import axios from "axios";
+import { useVideo } from "../Context/videoContext/video-context";
+import { useUserData } from "../Context/userDataContext/userData-context";
 import { VideoCards } from "./Components";
-import { useLikes } from "../Context/like-context";
-import { usePlaylist } from "../Context/playlist-context";
-import { useWatchlater } from "../Context/watchLater-context";
-import { getVideoByIdService } from "../all_services/videoService";
+import { usePlaylist } from "../Context/playlistContext/playlist-context";
+import { useHistoryServerCalls } from "../Context/userDataContext/useHistoryServerCalls";
+import { useLikesServerCalls } from "../Context/userDataContext/useLikesServerCalls";
+import { useWatchLaterServerCalls } from "../Context/userDataContext/useWatchLaterServerCalls";
 import "../stylesheets/singleVideoContainer.css";
 import { useAlert } from "react-alert";
 
 function SingleVideoContainer() {
+	const {
+		dataState: { watchlater, likes },
+	} = useUserData();
+	const { addToHistory } = useHistoryServerCalls();
+	const { addToLikes, removeFromLikes } = useLikesServerCalls();
+	const { addToWatchLater, removeFromWatchLater } = useWatchLaterServerCalls();
 	const token = localStorage.getItem("userToken");
-	const { state } = useVideos();
+	const { filteredVideos } = useVideo();
 	const alert = useAlert();
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const [video, setVideo] = useState({});
 	const { title, creator, description, categoryName } = video;
 	const { setModal } = usePlaylist();
-	const { watchlater, addToWatcherLater, deleteFromWatchlater } =
-		useWatchlater();
-	const { likesState, addToLikes, deleteFromLikes } = useLikes();
-	const inWatchlater = watchlater.watchlaterItems.find(
-		(item) => item._id === id
-	);
-	const inLikes = likesState.likes.find((item) => item._id === id);
-	const similarVideos = state.videos.filter(
+	const inWatchlater = watchlater.find((item) => item._id === id);
+	const inLikes = likes.find((item) => item._id === id);
+	const similarVideos = filteredVideos.filter(
 		(item) => item._id !== id && item.categoryName === categoryName
 	);
+
 	useEffect(() => {
 		(async () => {
 			try {
-				const response = await getVideoByIdService(id);
+				const response = await axios.get(`/api/video/${id}`);
 				if (response.status === 200 || response.status === 201) {
 					setVideo(response.data.video);
 				}
 			} catch (error) {
-				console.log("error");
+				alert.show("Error: Can't Fetch Video", {
+					type: "error",
+				});
 			}
 		})();
 	}, [id]);
+
+	useEffect(() => {
+		token && addToHistory(filteredVideos.find((video) => video._id === id));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [id]);
+
+	const addToPlaylistHandler = () => {
+		if (!token) {
+			navigate("/login");
+		} else {
+			setModal(filteredVideos.find((video) => video._id === id));
+		}
+	};
 	const addLikeHandler = () => {
 		if (!token) {
 			navigate("/login");
@@ -54,7 +73,7 @@ function SingleVideoContainer() {
 			navigate("/login");
 			alert.show("Please Login First!", { type: "info" });
 		}
-		deleteFromLikes(video);
+		removeFromLikes(id);
 	};
 
 	const deleteClickHandler = () => {
@@ -62,23 +81,16 @@ function SingleVideoContainer() {
 			navigate("/login");
 			alert.show("Please Login First!", { type: "info" });
 		}
-		deleteFromWatchlater(id);
+		removeFromWatchLater(id);
 	};
 	const addClickHandler = () => {
 		if (!token) {
 			navigate("/login");
 			alert.show("Please Login First!", { type: "info" });
 		}
-		addToWatcherLater(video);
+		addToWatchLater(video);
 	};
-	const addToPlaylistHandler = () => {
-		if (!token) {
-			navigate("/login");
-			alert.show("Please Login First!", { type: "info" });
-		} else {
-			setModal(video);
-		}
-	};
+
 	return (
 		<div>
 			<div className="video-list grow">

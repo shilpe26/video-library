@@ -42,7 +42,14 @@
 }
 
 .related-videos {
-    margin-left: 27rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: auto;
+    width: 100%;
+    margin-right: 28rem;
+    margin-left: 26rem;
 }
 
 .related-videos h2 {
@@ -53,11 +60,24 @@
     padding: 1rem;
 }
 
+.item-listing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    margin: auto;
+    margin-left: auto;
+    margin-left: 22rem;
+}
+
 .item-list {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 2.5rem;
+    flex-wrap: wrap;
+    padding: auto;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -73,9 +93,11 @@
 @media (max-width: 786px) {
     .video-container {
         flex-direction: column;
-        width: 100%;
+        width: 325px;
         margin-left: 0;
         padding: 2rem;
+        align-items: center;
+        justify-content: center;
     }
 
     .item-list {
@@ -86,12 +108,16 @@
         gap: 2.5rem;
     }
 
-    .video-action-btn {
-        margin-left: 0;
+    .item-listing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        margin: auto;
     }
 
-    .video {
-        width: 71%;
+    .video-action-btn {
         margin-left: 0;
     }
 
@@ -105,7 +131,6 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-left: 0;
         margin-top: 14rem;
     }
 

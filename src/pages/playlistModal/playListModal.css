@@ -43,6 +43,7 @@ input.ply-modal-input {
     left: 10px;
     right: 0;
     position: absolute;
+    cursor: pointer;
 }
 
 .play-list {

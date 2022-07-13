@@ -1,50 +1,45 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { VideoCards } from "./Components";
-import { useVideos } from "../Context/video-context";
-import {
-	ALL,
-	FUNDAMENTALS,
-	AGGRESSIVE,
-	GERMAN_SHEPHERD,
-} from "../global_constants/video-constants";
-import { categorisedVideos } from "../utils/filterFunction";
+import { useVideo } from "../Context/videoContext/video-context";
 import "../stylesheets/videosContainer.css";
 
 function VideosContainer() {
-	const { state, dispatch } = useVideos();
-	const categorisedData = categorisedVideos(state.videos, state.categories);
-	const data = categorisedData;
+	const { videoCategoryHandler, filteredVideos } = useVideo();
 
 	return (
 		<div className="video-listing mt-8">
 			<div className="chips">
 				<button
-					onClick={() => dispatch({ type: ALL })}
+					value="all"
+					onClick={(e) => videoCategoryHandler(e.target.value)}
 					className="chip flex items-center cursor"
 				>
 					All
 				</button>
 				<button
-					onClick={() => dispatch({ type: FUNDAMENTALS })}
+					value="fundamentals"
+					onClick={(e) => videoCategoryHandler(e.target.value)}
 					className="chip flex items-center cursor"
 				>
 					Fundamentals
 				</button>
 				<button
-					onClick={() => dispatch({ type: AGGRESSIVE })}
+					value="aggressive"
+					onClick={(e) => videoCategoryHandler(e.target.value)}
 					className="chip flex items-center cursor"
 				>
 					Agressive
 				</button>
 				<button
-					onClick={() => dispatch({ type: GERMAN_SHEPHERD })}
+					value="german_shepherd"
+					onClick={(e) => videoCategoryHandler(e.target.value)}
 					className="chip flex items-center cursor"
 				>
 					German Shepherd
 				</button>
 			</div>
 			<div className="video-card-listing flex flex-wrap items-stretch mt-2">
-				{data.map(({ _id, title, creator }) => (
+				{filteredVideos.map(({ _id, title, creator }) => (
 					<VideoCards key={_id} _id={_id} title={title} creator={creator} />
 				))}
 			</div>

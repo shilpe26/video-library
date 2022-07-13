@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../Context/auth-context";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { useLikes } from "../Context/like-context";
-import { useHistory } from "../Context/history-context";
-import { useWatchlater } from "../Context/watchLater-context";
-import { usePlaylist } from "../Context/playlist-context";
+import { usePlaylist } from "../Context/playlistContext/playlist-context";
 import Dogo from "../assets/bg-doggo.png";
 import "../stylesheets/videoCards.css";
 import { useAlert } from "react-alert";
+import { useUserData } from "../Context/userDataContext/userData-context";
+import { useLikesServerCalls } from "../Context/userDataContext/useLikesServerCalls";
+import { useWatchLaterServerCalls } from "../Context/userDataContext/useWatchLaterServerCalls";
+import { useHistoryServerCalls } from "../Context/userDataContext/useHistoryServerCalls";
+import { usePlaylistServerCall } from "../Context/playlistContext/usePlaylistServerCall";
 
 function VideoCards({ _id, title, creator }) {
 	const location = useLocation();
@@ -15,29 +17,33 @@ function VideoCards({ _id, title, creator }) {
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const alert = useAlert();
+	const {
+		dataState: { watchlater, likes },
+	} = useUserData();
 	const video = { _id, title, creator };
-	const { watchlater, addToWatcherLater, deleteFromWatchlater } =
-		useWatchlater();
-	const { likesState, deleteFromLikes } = useLikes();
-	const { historyState, addToHistory, deleteFromHistory } = useHistory();
-	const { setModal, deleteFromPlaylist } = usePlaylist();
-	const inLikes = likesState.likes.find((item) => item._id === video._id);
-	const inHistory = historyState.history.find((item) => item._id === video._id);
+	const { addToWatchLater, removeFromWatchLater } = useWatchLaterServerCalls();
+	const { removeFromLikes } = useLikesServerCalls();
+	const { removeFromHistory } = useHistoryServerCalls();
+	const { setModal } = usePlaylist();
+	const { deleteFromPlaylist } = usePlaylistServerCall();
+
+	const inLikes = likes.find((item) => item._id === video._id);
 	const [dropdown, setDropdown] = useState("none");
 	const [inWatchlater, setInWatchlater] = useState(false);
+
 	useEffect(() => {
-		if (watchlater.watchlaterItems) {
-			watchlater.watchlaterItems.find((item) => item._id === video._id) &&
+		if (watchlater) {
+			watchlater.find((item) => item._id === video._id) &&
 				setInWatchlater(true);
 		}
-	}, [watchlater.watchlaterItems]);
+	}, [watchlater]);
 
 	const addClickHandler = () => {
 		if (authState.encodedToken.length === 0) {
 			navigate("/login");
 			alert.show("Please Login First!", { type: "info" });
 		}
-		addToWatcherLater(video);
+		addToWatchLater(video);
 		setDropdown("none");
 	};
 
@@ -46,11 +52,11 @@ function VideoCards({ _id, title, creator }) {
 			navigate("/login");
 			alert.show("Please Login First!", { type: "info" });
 		}
-		deleteFromWatchlater(_id);
+		removeFromWatchLater(_id);
 		setDropdown("none");
 	};
 	const dislikeHandler = () => {
-		deleteFromLikes(video);
+		removeFromLikes(_id);
 		setDropdown("none");
 	};
 	const addToPlaylistHandler = () => {
@@ -68,9 +74,6 @@ function VideoCards({ _id, title, creator }) {
 				<img
 					onClick={() => {
 						navigate(`/videos/${_id}`);
-						authState.encodedToken.length !== 0 &&
-							!inHistory &&
-							addToHistory(video);
 					}}
 					className="card-img mt-2"
 					src={`https://i.ytimg.com/vi/${_id}/maxresdefault.jpg`}
@@ -111,7 +114,7 @@ function VideoCards({ _id, title, creator }) {
 				</div>
 				<li>
 					<span className="material-icons">playlist_add</span>
-					<span onClick={() => addToPlaylistHandler()}>Add to Playlist</span>
+					<span onClick={() => addToPlaylistHandler(_id)}>Add to Playlist</span>
 				</li>
 
 				<li>
@@ -129,13 +132,13 @@ function VideoCards({ _id, title, creator }) {
 				{inLikes && (
 					<li>
 						<span className="material-icons">thumb_down</span>
-						<span onClick={() => dislikeHandler()}>Dislke</span>
+						<span onClick={() => dislikeHandler(_id)}>Dislke</span>
 					</li>
 				)}
 				{location.pathname === "/history" && (
 					<li>
 						<span className="material-icons">thumb_down</span>
-						<span onClick={() => deleteFromHistory(video)}>
+						<span onClick={() => removeFromHistory(_id)}>
 							Delete From History
 						</span>
 					</li>

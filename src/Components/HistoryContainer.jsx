@@ -1,26 +1,27 @@
 import React from "react";
 import { VideoCards } from "./Components";
-import { useHistory } from "../Context/history-context";
+import { useUserData } from "../Context/userDataContext/userData-context";
+import { useHistoryServerCalls } from "../Context/userDataContext/useHistoryServerCalls";
 import { EmptyMessage } from "../pages/Pages";
 import "../stylesheets/historyContainer.css";
 
 function HistoryContainer() {
-	const { clearAllHistory } = useHistory();
 	const {
-		historyState: { history },
-		historyDispatch,
-	} = useHistory();
+		dataState: { history },
+	} = useUserData();
+	const { clearHistory } = useHistoryServerCalls();
+
 	return (
 		<div>
 			{history.length ? (
 				<>
 					<button
-						onClick={() => clearAllHistory(historyDispatch)}
+						onClick={() => clearHistory()}
 						className="btn btn-primary clear-btn-vl"
 					>
 						Clear All
 					</button>
-					<div className="item-list mt-4">
+					<div className="item-listing mt-4">
 						{history.map(({ _id, title, creator }) => (
 							<VideoCards key={_id} _id={_id} title={title} creator={creator} />
 						))}

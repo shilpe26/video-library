@@ -10,7 +10,7 @@ import {
 } from "../src/Components/Components";
 import Mockman from "mockman-js";
 import { useTheme } from "./Context/theme-context";
-import { usePlaylist } from "./Context/playlist-context";
+import { usePlaylist } from "./Context/playlistContext/playlist-context";
 import {
 	Home,
 	Login,

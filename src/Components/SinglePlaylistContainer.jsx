@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { VideoCards } from "../Components/Components";
 import { EmptyMessage } from "../pages/Pages";
-import { usePlaylist } from "../Context/playlist-context";
+import { usePlaylist } from "../Context/playlistContext/playlist-context";
 
 function SinglePlaylistContainer() {
 	const { id } = useParams();
@@ -14,7 +14,7 @@ function SinglePlaylistContainer() {
 	return (
 		<div>
 			{currentPlaylist && currentPlaylist.videos.length !== 0 ? (
-				<div className="item-list">
+				<div className="item-listing">
 					{currentPlaylist.videos.map(({ _id, title, creator }) => {
 						return (
 							<VideoCards key={_id} _id={_id} title={title} creator={creator} />

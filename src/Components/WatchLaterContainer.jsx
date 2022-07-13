@@ -1,16 +1,19 @@
 import React from "react";
 import { VideoCards } from "../Components/Components";
-import { useWatchlater } from "../Context/watchLater-context";
+import { useUserData } from "../Context/userDataContext/userData-context";
 import { EmptyMessage } from "../pages/Pages";
 import "../stylesheets/watchLaterContainer.css";
 
 function WatchLaterContainer() {
-	const { watchlater } = useWatchlater();
+	const {
+		dataState: { watchlater },
+	} = useUserData();
+
 	return (
 		<div>
-			{watchlater.watchlaterItems.length ? (
-				<div className="item-list">
-					{watchlater.watchlaterItems.map(({ _id, title, creator }) => {
+			{watchlater.length ? (
+				<div className="item-listing">
+					{watchlater.map(({ _id, title, creator }) => {
 						return (
 							<VideoCards key={_id} _id={_id} title={title} creator={creator} />
 						);

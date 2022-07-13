@@ -34,12 +34,14 @@
     .side-list {
         flex-direction: row;
         justify-content: space-evenly;
+align-items: flex-start;
     }
 
     .side-bar {
         width: 100%;
         min-height: 10vh;
         bottom: 0;
+        left: 0;
         background-color: var(--secondary-color);
     }
 }
