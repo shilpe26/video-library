@@ -5,7 +5,7 @@ function Drawer() {
 	return (
 		<div>
 			<aside className="side-bar flex flex-col pr-8">
-				<ul className="side-list pl-8 text-md">
+				<ul className="side-list text-md">
 					<li className="p-2">
 						<Link to="/" className="links">
 							<span className="material-icons">home</span>
