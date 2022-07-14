@@ -34,7 +34,8 @@
     .side-list {
         flex-direction: row;
         justify-content: space-evenly;
-align-items: flex-start;
+        align-items: flex-start;
+        padding-left: 0rem;
     }
 
     .side-bar {
