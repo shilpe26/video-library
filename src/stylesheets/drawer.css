@@ -46,4 +46,10 @@
         left: 0;
         background-color: var(--secondary-color);
     }
+    .links{
+        color: var(--dark-bg-color);
+    }
+    .links:focus{
+        color: var(--light-bg-color);
+    }
 }
